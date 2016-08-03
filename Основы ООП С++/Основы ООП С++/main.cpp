@@ -38,7 +38,8 @@ int main()
 
 	b3 = b1;
 	write(b3);
-
+	
 	system("pause");
 	return 0;
 }
+
