@@ -1,19 +1,20 @@
-#include "functions.h"
+#include "class.h"
 
 int main()
 {
 	setlocale(0, "");
 
-	int a, b;
-	cout << "¬ведите числа а и b: ";
-	cin >> a >> b;
-	cout << myplus(a, b) << endl;
-	
-	//func1();
+	/*NewYear n1;
+	n1.set();
+	n1.show();*/
 
-	func();
-	func();
-	func();
+	NewYear n1;
+	NewYear n2(2016,2017);
+	NewYear n3(2016);
+
+	n1.show();
+	n2.show();
+	n3.show();
 
 	system("pause");
 	return 0;
