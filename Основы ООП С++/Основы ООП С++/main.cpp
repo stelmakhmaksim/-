@@ -1,27 +1,26 @@
-#include "class.h"
+#include "counter.h"
+#include "time.h"
 
 int main()
 {
 	setlocale(0, "");
 
-	/*NewYear n1;
-	n1.set();
-	n1.show();*/
+	/*Counter c1;
+	Counter c2;
+	cout << c1.getCount() << endl;
+	c1++;
+	c2 = ++c1;
+	cout << c2.getCount() << endl;
+	cout << c1.getCount() << endl;
+	c2=c1++;
+	cout << c2.getCount() << endl;
+	cout << c1.getCount() << endl;*/
 
-	NewYear n1;
-	NewYear *n2 = new NewYear(2016, 2017);
-	NewYear n3(2016);
-
-	cout << "Переменная n1" << endl;
-	n1.show();
-	cout << "Переменная n2" << endl;
-	n2->show();
-	cout << "Переменная n3" << endl;
-	n3.show();
-
-	n1.show_stat();
-	n2->show_stat();
-	n3.show_stat();
+	Time t1(2, 15, 56);
+	Time t2(3, 45, 5);
+	Time t3(5, 5, 5);
+	t3 = t2 + t1 + t3;
+	t3.showTime();
 
 	system("pause");
 	return 0;
