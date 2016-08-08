@@ -1,18 +1,26 @@
 #include "class.h"
 
-NewYear::NewYear() :current_year(0), the_next_year(0)
+NewYear::NewYear() : current_year(0), the_next_year(0)
 {
 	//тело конструктора
+	unix_year = 1969;
 }
 
-NewYear::NewYear(int c,int n) : current_year(c), the_next_year(n)
+NewYear::~NewYear()//деструктор
+{
+
+}
+
+NewYear::NewYear(int c, int n) : current_year(c), the_next_year(n)
 {
 	//конструктор с двум€ параметрами
+	unix_year = 1971;
 }
 
 NewYear::NewYear(int c) : current_year(c)
 {
 	the_next_year = ++c;
+	unix_year = 1970;
 }
 
 void NewYear::set()
@@ -28,3 +36,10 @@ void NewYear::show()
 	cout << "“екущий год: " << current_year << endl;
 	cout << "—ледующий год: " << the_next_year << endl;
 }
+
+void NewYear::show_stat()
+{
+	cout << "—татическа€ переменна€ " << unix_year << endl;
+}
+
+int NewYear::unix_year;
