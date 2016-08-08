@@ -7,9 +7,9 @@ int main()
 	/*NewYear n1;
 	n1.set();
 	n1.show();*/
-	
+
 	NewYear n1;
-	NewYear *n2 = new NewYear(2016,2017);
+	NewYear *n2 = new NewYear(2016, 2017);
 	NewYear n3(2016);
 
 	cout << "Переменная n1" << endl;

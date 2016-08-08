@@ -13,7 +13,7 @@ public://открытые переменные или функции
 	void show();
 	void show_stat();
 	NewYear();
-	NewYear(int c,int n);
+	NewYear(int c, int n);
 	NewYear(int c);
 	~NewYear();
 };
