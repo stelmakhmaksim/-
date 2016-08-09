@@ -8,10 +8,10 @@ int main()
 	int sec = t;
 	t.showTime();
 	cout << sec << endl;
-
+	Time t2(5);
 	t = sec;
 	t.showTime();
-
+	t2.showTime();
 	system("pause");
 	return 0;
 }
