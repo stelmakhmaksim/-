@@ -5,9 +5,11 @@ class Time
 {
 private:
 	int hou, min, sec;
+	int sec1, sec2;
 public:
 	Time();
 	Time(int h, int m, int s);
 	void showTime();
-	Time operator+(Time);
+	void showSec();
+	bool operator>(Time);
 };

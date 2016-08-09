@@ -1,26 +1,19 @@
-#include "counter.h"
 #include "time.h"
+#include "Array.h"
 
 int main()
 {
 	setlocale(0, "");
+	/*Time t1(1,15,47);
+	Time t2(1,16,46);
+	if (t1 > t2)
+	cout << "t1>t2" << endl;
+	else cout << "t2>=t1 "<<endl;*/
 
-	/*Counter c1;
-	Counter c2;
-	cout << c1.getCount() << endl;
-	c1++;
-	c2 = ++c1;
-	cout << c2.getCount() << endl;
-	cout << c1.getCount() << endl;
-	c2=c1++;
-	cout << c2.getCount() << endl;
-	cout << c1.getCount() << endl;*/
-
-	Time t1(2, 15, 56);
-	Time t2(3, 45, 5);
-	Time t3(5, 5, 5);
-	t3 = t2 + t1 + t3;
-	t3.showTime();
+	Array a1;
+	cout << a1[5] << endl;
+	a1[5] = 7;
+	cout << a1[5] << endl;
 
 	system("pause");
 	return 0;

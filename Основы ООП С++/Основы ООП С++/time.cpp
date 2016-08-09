@@ -11,25 +11,11 @@ void Time::showTime()
 {
 	cout << hou << ':' << min << ':' << sec << endl;
 }
-
-//t3 = t1 + t2; t1 - вызывает операцию, а t2 является аргументом
-Time Time :: operator+(Time t2)
+//перегрузка булевской операции
+bool Time::operator>(Time t2)
 {
-	Time t_res;
-	t_res.sec = sec + t2.sec;
-	if (t_res.sec >= 60)
-	{
-		t_res.sec -= 60;
-		t_res.min = 1;
-	}
-
-	t_res.min += min + t2.min;
-	if (t_res.min >= 60)
-	{
-		t_res.min -= 60;
-		t_res.hou = 1;
-	}
-
-	t_res.hou += hou + t2.hou;
-	return t_res;
+	int sec1 = hou * 3600 + min * 60 + sec;
+	int sec2 = t2.hou * 3600 + t2.min * 60 + t2.sec;
+	cout << sec1 << " " << sec2 << " ";
+	return (sec1 > sec2) ? true : false;
 }
