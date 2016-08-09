@@ -11,11 +11,17 @@ void Time::showTime()
 {
 	cout << hou << ':' << min << ':' << sec << endl;
 }
-//перегрузка булевской операции
-bool Time::operator>(Time t2)
+
+//преобразование типов данных из пользовательского в примитивный
+Time::operator int()
 {
-	int sec1 = hou * 3600 + min * 60 + sec;
-	int sec2 = t2.hou * 3600 + t2.min * 60 + t2.sec;
-	cout << sec1 << " " << sec2 << " ";
-	return (sec1 > sec2) ? true : false;
+	return hou * 3600 + min * 60 + sec;
+}
+
+//преобразование типов данных из примитивного в пользовательский
+Time::Time(int s)
+{
+	hou = s / 3600;
+	min = (s - hou * 3600) / 60;
+	sec = s - hou * 3600 - min * 60;
 }

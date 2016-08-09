@@ -8,8 +8,8 @@ private:
 	int sec1, sec2;
 public:
 	Time();
+	Time(int s);
 	Time(int h, int m, int s);
 	void showTime();
-	void showSec();
-	bool operator>(Time);
+	operator int();
 };
