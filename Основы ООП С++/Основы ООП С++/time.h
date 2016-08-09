@@ -8,7 +8,7 @@ private:
 	int sec1, sec2;
 public:
 	Time();
-	Time(int s);
+	explicit  Time(int s);//explicit исключает вероятность несанкционированного преобразования типов, можно только инициализировать переменную
 	Time(int h, int m, int s);
 	void showTime();
 	operator int();
