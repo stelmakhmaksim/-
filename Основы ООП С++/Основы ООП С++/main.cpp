@@ -5,7 +5,8 @@ int main()
 	setlocale(0, "");
 
 	Time t(2, 59, 59);
-	int sec = t;
+	int sec;
+	sec = t;
 	t.showTime();
 	cout << sec << endl;
 
