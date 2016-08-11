@@ -12,24 +12,16 @@ void Time::showTime()
 	cout << hou << ':' << min << ':' << sec << endl;
 }
 
-//t3 = t1 + t2; t1 - вызывает операцию, а t2 является аргументом
-Time Time :: operator+(Time t2)
+//преобразование типов данных из пользовательского в примитивный
+Time::operator int()
 {
-	Time t_res;
-	t_res.sec = sec + t2.sec;
-	if (t_res.sec >= 60)
-	{
-		t_res.sec -= 60;
-		t_res.min = 1;
-	}
+	return hou * 3600 + min * 60 + sec;
+}
 
-	t_res.min += min + t2.min;
-	if (t_res.min >= 60)
-	{
-		t_res.min -= 60;
-		t_res.hou = 1;
-	}
-
-	t_res.hou += hou + t2.hou;
-	return t_res;
+//преобразование типов данных из примитивного в пользовательский
+Time::Time(int s)
+{
+	hou = s / 3600;
+	min = (s - hou * 3600) / 60;
+	sec = s - hou * 3600 - min * 60;
 }

@@ -1,26 +1,19 @@
-#include "counter.h"
 #include "time.h"
-
+#include "phone.h"
 int main()
 {
 	setlocale(0, "");
 
-	/*Counter c1;
-	Counter c2;
-	cout << c1.getCount() << endl;
-	c1++;
-	c2 = ++c1;
-	cout << c2.getCount() << endl;
-	cout << c1.getCount() << endl;
-	c2=c1++;
-	cout << c2.getCount() << endl;
-	cout << c1.getCount() << endl;*/
+	/*Time t(16000);
+	t.showTime();
 
-	Time t1(2, 15, 56);
-	Time t2(3, 45, 5);
-	Time t3(5, 5, 5);
-	t3 = t2 + t1 + t3;
-	t3.showTime();
+	int sec = t;
+	int sec2 = 156;
+	t = sec2;//ошибка, т.к. explicit*/
+
+	const Phone p;
+	p.setModel("model");
+	p.setVersion("1.9");
 
 	system("pause");
 	return 0;
