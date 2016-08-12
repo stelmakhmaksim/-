@@ -1,41 +1,31 @@
-#include "main.h"
-
-void addFive(int *p)
-{
-	*p += 5;
-}
+#include "Object.h"
 
 int main()
 {
 	setlocale(0, "");
-	//основы указателей
-	/*int var1 = 3, var2 = 5;
-	cout << var1 << endl << &var1 << endl << var2 << endl << &var2 << endl;
-	int* p;
-	p = &var1;
-	cout << p << endl << *p << endl;
-	*p = 11;
-	cout << "var1 " << var1 << endl;*/
 
-	//перебор массива с помощью указателей
-	/*int arr[] = { 1, 2, 3 };
-	for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
-	cout << arr[i] <<endl;
-	for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
-	cout << *(arr + i) << endl;
-	for each (int p in arr)
+	/*int* ptr = new int(3);
+	cout << *ptr << endl;*/
+	//массив на введенное количество элементов
+	/*int n = 0;
+	cout << "¬ведите размерность массива" << endl;
+	cin >> n;
+	int* arr = new int[n];
+	for (int i = 0; i < n; i++)
 	{
-	cout << p <<endl ;
+		cout << "¬ведите "<< i << " элемент массива" << endl;
+		cin >> arr[i];
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << ' ';
 	}*/
 
-	//передача указателей в функцию
-	int a = 3;
-	cout << "a = " << a << endl;
-	cout << a;
-	addFive(&a);
-	cout << " + 5 = " << a << endl;
+	Object *obj = new Object();
+	obj->setProp(7);
+	cout << (*obj).getProp() << endl;
 
-
+	delete obj;
 	system("pause");
 	return 0;
 }
