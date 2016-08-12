@@ -1,31 +1,40 @@
-#include "C.h"
+#include "main.h"
 
-class A1
+void addFive(int *p)
 {
-public:
-	void show(){ cout << "Вызов функции" << endl; }
-};
-
-class B1:public A1
-{};
-
-class B2:public A1
-{};
-
-class C1:public B1, public B2
-{};
+	*p += 5;
+}
 
 int main()
 {
 	setlocale(0, "");
+	//основы указателей
+	/*int var1 = 3, var2 = 5;
+	cout << var1 << endl << &var1 << endl << var2 << endl << &var2 << endl;
+	int* p;
+	p = &var1;
+	cout << p << endl << *p << endl;
+	*p = 11;
+	cout << "var1 " << var1 << endl;*/
 
-	/*C c(0,1,2);
-	c.show_props();
-	c.set_props(3, 4, 5);
-	c.show_props();*/
+	//перебор массива с помощью указателей
+	/*int arr[] = { 1, 2, 3 };
+	for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
+	cout << arr[i] <<endl;
+	for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
+	cout << *(arr + i) << endl;
+	for each (int p in arr)
+	{
+	cout << p <<endl ;
+	}*/
 
-	C1 c;
-	c.B1::show();
+	//передача указателей в функцию
+	int a = 3;
+	cout << "a = " << a << endl;
+	cout << a;
+	addFive(&a);
+	cout << " + 5 = " << a << endl;
+
 
 	system("pause");
 	return 0;
