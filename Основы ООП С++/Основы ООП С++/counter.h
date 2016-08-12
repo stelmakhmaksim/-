@@ -1,8 +1,9 @@
 #include "main.h"
 //перегрузка унарных операций
+
 class Counter
 {
-private://скрытые переменные или функции
+protected://скрытые переменные или функции
 	int count;
 public://открытые переменные или функции
 	Counter();
@@ -10,4 +11,5 @@ public://открытые переменные или функции
 	int getCount();
 	Counter operator++();
 	Counter operator++(int);
+	void show_count();
 };

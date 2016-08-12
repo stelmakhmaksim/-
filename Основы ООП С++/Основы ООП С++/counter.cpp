@@ -22,3 +22,8 @@ Counter Counter::operator++()
 {
 	return Counter(++count);
 }
+
+void Counter::show_count()
+{
+	cout << "Это объект класса Counter: " << count << endl;
+}
