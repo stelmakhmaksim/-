@@ -1,31 +1,28 @@
-#include "Object.h"
+#include "employee.h"
 
 int main()
 {
 	setlocale(0, "");
 
-	/*int* ptr = new int(3);
-	cout << *ptr << endl;*/
-	//массив на введенное количество элементов
-	/*int n = 0;
-	cout << "¬ведите размерность массива" << endl;
-	cin >> n;
-	int* arr = new int[n];
-	for (int i = 0; i < n; i++)
-	{
-		cout << "¬ведите "<< i << " элемент массива" << endl;
-		cin >> arr[i];
-	}
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << ' ';
-	}*/
+	Employee* empl;
 
-	Object *obj = new Object();
-	obj->setProp(7);
-	cout << (*obj).getProp() << endl;
+	Manager* man = new Manager;
+	Developer* dev = new Developer;
+	Designer* des = new Designer;
 
-	delete obj;
+	empl = des;//указатели на базовые классы совместимы по типу с указател€ми на дочерние классы
+	//empl->goToWork();
+	empl = dev;
+	//empl->goToWork();
+
+	Employee* mas[3];
+	mas[0] = man;
+	mas[1] = dev;
+	mas[2] = des;
+
+	for (int i = 0; i < 3; i++)
+		mas[i]->goToWork();
+
 	system("pause");
 	return 0;
 }
