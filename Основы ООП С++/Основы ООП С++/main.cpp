@@ -1,28 +1,32 @@
-#include "employee.h"
+#include "main.h"
+//флаги статуса ошибок
+//goodbit-ошибок нет||eofbit-достигнут конец файла||failbit-операция не выполнена||badbit-недопустимая операция||hardfail-неисправимая ошибка
+//good(),eof(),fail(),bad()-позволяют определетить статус флагов||clear-снимает все флаги ошибок или устанавливает соответствующий флаг
 
 int main()
 {
 	setlocale(0, "");
+	cin.unsetf(ios::skipws);
+	int i;
+	while (true)
+	{
+  		cout << "Введите целое число: ";
+		cin >> i;//если вводить 1453asds, то компилятор съест только цифры, а буквы остануться в потоке
 
-	Employee* empl;
+		if (cin.good())
+		{
+			cin.ignore(10, '\n');//чистим поток
+			break;
+		}
 
-	Manager* man = new Manager;
-	Developer* dev = new Developer;
-	Designer* des = new Designer;
-
-	empl = des;//указатели на базовые классы совместимы по типу с указателями на дочерние классы
-	//empl->goToWork();
-	empl = dev;
-	//empl->goToWork();
-
-	Employee* mas[3];
-	mas[0] = man;
-	mas[1] = dev;
-	mas[2] = des;
-
-	for (int i = 0; i < 3; i++)
-		mas[i]->goToWork();
-
+		cin.clear();//снимаем флаги ошибок//если мы допустили ошибку один раз и не почистили её,то она будет стоять постоянно,(зацикливание)
+		cout << "Неправильный ввод" << endl;
+		cin.ignore(10, '\n');//если поток не чистить, то данные из потока будут постоянно пытаться присовиться i, результат - зацикливание
+	}
+	cout << "Целое число " << i << endl;
+	string str;
+	cin >> str;//смотрим, что осталось в потоке
+	cout << "То, что осталось в потоке: " << str << endl;
 	system("pause");
 	return 0;
 }
