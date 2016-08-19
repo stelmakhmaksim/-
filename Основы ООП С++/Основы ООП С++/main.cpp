@@ -24,10 +24,9 @@ int main()
 
 	//перегрузка операторов ввода и вывода
 	Something some1, some2;
-	cout << some1 << some2;
 	cin >> some1 >> some2;
-	//как сделать не для cin и cout написать самим
-	//передача по ссылке и указателю
+	cout << some1 << some2;
+
 	system("pause");
 	return 0;
 }
